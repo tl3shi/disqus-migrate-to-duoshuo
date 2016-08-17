@@ -31,6 +31,8 @@ def main():
             continue
         if title is not None:
             thread_key = urlparse(link).path
+            if thread_key != '/about/' and (not thread_key.endswith(".html")):
+                continue
             thread['thread_key'] = thread_key
             if title_suffix is not None:
                 if title.endswith(title_suffix):
